@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<list>
+	<projects>
+		<item id="1" name="git" path="develop/git" origin="sa_gitlab@192.168.0.97:WebUser/webgit.git" description="" />
+	</projects>
+	<servers>
+		<item id="1" name="192.168.0.97::www" path="192.168.0.97::www" description="" />
+	</servers>
+</list>

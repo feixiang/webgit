@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>git</title>
+		<meta name="description" content="">
+		<meta name="author" content="Administrator">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="container">
+			<header>
+				<h1></h1>
+			</header>
+			<div class="row-fluid">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">同步工具</h3>
+					</div>
+					<div class="panel-body">
+						<div class="input-group form-group">
+							<span class="input-group-addon">工程列表</span>
+							<select name="project" class="form-control projects" id="rsync_project">
+								<option value="">no projects found</option>
+							</select>
+						</div>
+						<div class="input-group form-group">
+							<span class="input-group-addon">同步地址</span>
+							<select name="server" class="form-control servers" id="rsync_path">
+								<option value="">no projects found</option>
+							</select>
+						</div>
+						<button type="button" class="btn btn-success pull-right" onclick="rsync();">
+							<span class="glyphicon glyphicon-upload"></span>同步代码
+						</button>
+					</div>
+				</div>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">版本管理</h3>
+					</div>
+					<div class="panel-body">
+						<div class="input-group form-group">
+							<span class="input-group-addon">工程列表</span>
+							<select name="project" class="form-control projects" id="project">
+								<option value="">no projects found</option>
+							</select>
+						</div>
+
+						<div class="btn-group form-group">
+							<button type="button" class="btn btn-info" onclick="git_status();">
+								<i class="glyphicon glyphicon-retweet"></i> 查看差异
+							</button>
+							<button type="button" class="btn btn-warning" onclick="git_status();">
+								<i class="glyphicon glyphicon-retweet"></i> 回退版本
+							</button>
+							<button type="button" class="btn btn-danger" onclick="git_reset_hard();">
+								<i class="glyphicon glyphicon-retweet"></i> 强制回退版本
+							</button>
+						</div>
+
+						<div class="input-group form-group">
+							<span class="input-group-addon">修改反馈</span>
+							<textarea class="form-control" id="comment"></textarea>
+							<button type="button" class="btn btn-info"  onclick="git_push();">
+								<span class="glyphicon  glyphicon-saved"></span> 提交版本
+							</button>
+						</div>
+
+						<div class="input-group form-group">
+							<span class="input-group-addon">版本标签</span>
+							<input type="text" class="form-control" id="tag">
+							<button type="button" class="btn btn-info"  onclick="git_tag();">
+								<span class="glyphicon glyphicon-saved"></span> 提交标签
+							</button>
+						</div>
+						<div class="input-group form-group">
+							<span class="input-group-addon">请输入提交地址</span>
+							<textarea class="form-control" id="origin"></textarea>
+							<button type="button" class="btn btn-info" onclick="git_init();">
+								<i class="glyphicon glyphicon-retweet"></i> 初始化工程
+							</button>
+						</div>
+
+					</div>
+					<div class="input-group" id="result"></div>
+				</div>
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="html/git.js"></script>
+	</body>
+</html>
